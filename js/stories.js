@@ -170,7 +170,9 @@ async function toggleStoryFavorite(evt) {
   console.debug("toggleStoryFavorite");
 
   const $tgt = $(evt.target);
+  
   const $closestLi = $tgt.closest("li");
+  console.log($closestLi)
   const storyId = $closestLi.attr("id");
   const story = storyList.stories.find(s => s.storyId === storyId);
 
@@ -182,7 +184,7 @@ async function toggleStoryFavorite(evt) {
   } else {
     // currently not a favorite: do the opposite
     await currentUser.addFavorite(story);
-    $tgt.closest("i").toggleClass("fas far");
+    $tgt.closest("i").toggleClass("far fas");
   }
 }
 

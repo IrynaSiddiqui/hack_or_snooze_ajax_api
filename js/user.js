@@ -4,7 +4,7 @@
 let currentUser;
 
 /******************************************************************************
- * User login/signup/login
+ * User login/signup
  */
 
 /** Handle login form submission. If login ok, sets up the user instance */
