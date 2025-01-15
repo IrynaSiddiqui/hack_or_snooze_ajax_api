@@ -22,7 +22,7 @@ async function getAndShowStoriesOnStart() {
 
 function generateStoryMarkup(story, showDeleteBtn = false) {
   // console.debug("generateStoryMarkup", story);
-  console.log(story)
+  //console.log(story)
   const hostName = story.getHostName();
 
   // if a user is logged in, show favorite/not-favorite star
@@ -56,11 +56,9 @@ function getDeleteBtnHTML() {
 /** Make favorite/not-favorite star for story */
 
 function getStarHTML(story, user) {
-  const isFavorite = user.isFavorite(story);
-  const starType = isFavorite ? "fas" : "far";
   return `
       <span class="star">
-        <i class="${starType} fa-star"></i>
+        <i class="${user.isFavorite(story) ? 'fas' : 'far'} fa-star"></i>
       </span>`;
 }
 
